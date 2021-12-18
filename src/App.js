@@ -1,8 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import PokemonList from "./Views/PokemonList";
-import PokemonDetail from "./Views/PokemonDetail";
-import MyPokemonList from "./Views/MyPokemonList";
-import MyPokemonDetail from "./Views/MyPokemonDetail";
+import loadable from "@loadable/component";
+
+// import PokemonList from "./Views/PokemonList";
+// import PokemonDetail from "./Views/PokemonDetail";
+// import MyPokemonList from "./Views/MyPokemonList";
+// import MyPokemonDetail from "./Views/MyPokemonDetail";
+const PokemonList = loadable(() => import("./Views/PokemonList"));
+const PokemonDetail = loadable(() => import("./Views/PokemonDetail"));
+const MyPokemonList = loadable(() => import("./Views/MyPokemonList"));
+const MyPokemonDetail = loadable(() => import("./Views/MyPokemonDetail"));
 
 function App() {
   /*
