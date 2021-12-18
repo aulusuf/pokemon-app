@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import App from "./App";
-
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
@@ -20,3 +20,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+
+reportWebVitals();
