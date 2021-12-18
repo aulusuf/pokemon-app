@@ -30,7 +30,12 @@ const MyPokemonList = () => {
     }
 
     const parsingLocalStorage = JSON.parse(localStorage.getItem("myPokemon"));
-    if (parsingLocalStorage.length < 1) {
+    if (localStorage.getItem("myPokemon") === null) {
+      let emptyLocal = [];
+      emptyLocal.push();
+      console.log(emptyLocal);
+      localStorage.setItem("myPokemon", JSON.stringify(emptyLocal));
+    } else if (parsingLocalStorage.length < 1) {
       setOwnedPokemon(0);
     } else {
       setOwnedPokemon(parsingLocalStorage.reverse());

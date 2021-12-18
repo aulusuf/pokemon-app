@@ -52,7 +52,7 @@ const PokemonDetail = () => {
     pokemonMoves,
     pokemonType
   ) => {
-    if (pokemonNickname === undefined) {
+    if (pokemonNickname === undefined || pokemonNickname === "") {
       pokemonNickname = "Why I got no name you";
     }
     let data = [];
