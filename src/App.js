@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import PokemonList from "./Views/PokemonList";
+import PokemonDetail from "./Views/PokemonDetail";
+import MyPokemonList from "./Views/MyPokemonList";
+import MyPokemonDetail from "./Views/MyPokemonDetail";
 
 function App() {
+  /*
+  You can use ​Rest-API​ from ​https://pokeapi.co/​ as your data source. But using
+  GraphQL​ https://github.com/mazipan/graphql-pokeapi is a big plus
+  */
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<PokemonList />} />
+        <Route path="/myPokemons" element={<MyPokemonList />} />
+        <Route path="/:name" exact element={<PokemonDetail />} />
+        <Route
+          path="/myPokemon/:nickname"
+          exact
+          element={<MyPokemonDetail />}
+        />
+      </Routes>
     </div>
   );
 }
